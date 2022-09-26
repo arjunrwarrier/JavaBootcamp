@@ -9,7 +9,7 @@ public class MenuDriven {
         while (true)
         {
             System.out.println("Select an option: ");
-            System.out.println("1. Add Student");
+            System.out.println("1. Add two numbers");
             System.out.println("2. Search Student");
             System.out.println("3. Delete Student");
             System.out.println("4. View all Student");
@@ -34,8 +34,6 @@ public class MenuDriven {
                     break;
                 case 5:
                     System.exit(0);
-
-
 
             }
 
