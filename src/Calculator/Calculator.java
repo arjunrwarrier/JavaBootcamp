@@ -6,6 +6,7 @@ public class Calculator {
     public static void main(String[] args) {
 
         int choice,num1,num2,answer;
+        Scanner scanner = new Scanner(System.in);
 
         while(true){
 
@@ -16,7 +17,7 @@ public class Calculator {
             System.out.println("4. Divide two numbers:");
             System.out.println("5. Exit:");
 
-            Scanner scanner = new Scanner(System.in);
+
             choice = scanner.nextInt();
 
 
@@ -47,8 +48,12 @@ public class Calculator {
                     System.out.println("Enter two numbers: ");
                     num1 = scanner.nextInt();
                     num2 = scanner.nextInt();
-                    answer = num1 / num2;
-                    System.out.println("The answer : "+answer);
+                    try {
+                        answer = num1 / num2;
+                        System.out.println("The answer : "+answer);
+                    }catch (ArithmeticException e){
+                        System.out.println("Division by zero is not possible."+e.toString());
+                    }
                     break;
                 case 5:
                     System.exit(0);

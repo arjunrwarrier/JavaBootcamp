@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class MenuDriven {
     public static void main(String[] args) {
         int choice;
+        Scanner scanner = new Scanner(System.in);
 
         while (true)
         {
@@ -15,7 +16,7 @@ public class MenuDriven {
             System.out.println("4. View all Student");
             System.out.println("5.Exit");
 
-            Scanner scanner = new Scanner(System.in);
+
             choice = scanner.nextInt();
 
             switch (choice){
