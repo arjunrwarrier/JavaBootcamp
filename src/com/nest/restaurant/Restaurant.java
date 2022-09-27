@@ -6,7 +6,8 @@ public class Restaurant {
     public static void main(String[] args) {
         int total =0, quantity, choice;
         Scanner scanner = new Scanner(System.in);
-        FoodItems foodItems = new FoodItems(10,15,20,50,60);
+        FoodItems foodItems = new FoodItems(10,15,20,50,60);//
+        FoodItems takeAwayFood = new FoodItems(12,18,25,55,65);
         while(true){
             System.out.println("Select an option: ");
             System.out.println("1.Tea              :10Rs");
