@@ -1,11 +1,18 @@
 package com.nest.restaurant;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Restaurant {
     public static void main(String[] args) {
-        int total = 0, quantity, choice1, choice2;
+        int total = 0, quantity, choice1, choice2, invoice;
+        String customerName;
+        Random random = new Random();
+
+        HashMap<String,String> accounts = new HashMap<>();
+        ArrayList<String> transaction =  new ArrayList<>();
 
         ArrayList<String> foodItem = new ArrayList<>(); //storing fooditems
 
@@ -28,7 +35,9 @@ public class Restaurant {
             System.out.println("Select an option: ");
             System.out.println("1.Dine Inn            ");
             System.out.println("2.Take Away           ");
-            System.out.println("3. EXIT               ");
+            System.out.println("3.Account Transaction");
+            System.out.println("4. EXIT               ");
+           // System.out.println(transaction);
             choice1 = scanner.nextInt();
 
 
@@ -86,14 +95,23 @@ public class Restaurant {
                             total += quantity * foodItems.getBuger();
                             break;
                         case 6:
-
+                            System.out.println("Enter your name: ");
+                            customerName = scanner.next();
                             for(int i=0;i<foodItem.size();i++){
                                 System.out.println(foodItem.get(i)+" : "+price.get(i)+"Rs  x "+tquantity.get(i));
                             }
                             System.out.println("Total Bill : " + total);
+                            invoice = random.nextInt(1000);
+                            System.out.println("Bill InvoiceNumber: "+invoice);
                             foodItem.clear();
                             price.clear();
                             tquantity.clear();
+                            accounts.put("Name",customerName);
+                            accounts.put("Total", String.valueOf(total));
+                            accounts.put("Mode","Take Away");
+                            accounts.put("Invoice", String.valueOf(invoice));
+                            transaction.add(String.valueOf(accounts));
+                          //  accounts.clear();
                             total = 0;
                             break;
                         case 7:
@@ -156,13 +174,23 @@ public class Restaurant {
                             total += quantity * takeAwayFood.getBuger();
                             break;
                         case 6:
+                            System.out.println("Enter your name: ");
+                            customerName = scanner.next();
                             for(int i=0;i<foodItem.size();i++){
                                 System.out.println(foodItem.get(i)+" : "+price.get(i)+"Rs  x "+tquantity.get(i));
                             }
                             System.out.println("Total Bill : " + total);
+                            invoice = random.nextInt(1000);
+                            System.out.println("Bill InvoiceNumber: "+invoice);
                             foodItem.clear();
                             price.clear();
                             tquantity.clear();
+                            accounts.put("Name",customerName);
+                            accounts.put("Total", String.valueOf(total));
+                            accounts.put("Mode","Take Away");
+                            accounts.put("Invoice", String.valueOf(invoice));
+                            transaction.add(String.valueOf(accounts));
+                            //accounts.clear();
                             total = 0;
                             break;
                         case 7:
@@ -174,7 +202,11 @@ public class Restaurant {
 
                         }
                         break;
-                case 3: System.exit(0);
+                case 3:
+                    System.out.println(transaction);
+                    break;
+
+                case 4: System.exit(0);
                         break;
                 default:
                     System.out.println("Enter a valid option");
