@@ -6,6 +6,8 @@ public class Restaurant {
     public static void main(String[] args) {
         int total =0, quantity, choice;
         Scanner scanner = new Scanner(System.in);
+        FoodItems foodItems = new FoodItems(10,15,20,50,60);//
+        FoodItems takeAwayFood = new FoodItems(12,18,25,55,65);
         while(true){
             System.out.println("Select an option: ");
             System.out.println("1.Tea              :10Rs");
@@ -21,27 +23,27 @@ public class Restaurant {
                 case 1:
                     System.out.println("Quantity : ");
                     quantity = scanner.nextInt();
-                    total += quantity * 10;
+                    total += quantity * foodItems.getTea();
                     break;
                 case 2:
                     System.out.println("Quantity : ");
                     quantity = scanner.nextInt();
-                    total += quantity * 15;
+                    total += quantity * foodItems.getCoffee();
                     break;
                 case 3:
                     System.out.println("Quantity : ");
                     quantity = scanner.nextInt();
-                    total += quantity * 20;
+                    total += quantity * foodItems.getLimeJuice();
                     break;
                 case 4:
                     System.out.println("Quantity : ");
                     quantity = scanner.nextInt();
-                    total += quantity * 50;
+                    total += quantity * foodItems.getSandwich();
                     break;
                 case 5:
                     System.out.println("Quantity : ");
                     quantity = scanner.nextInt();
-                    total += quantity * 60;
+                    total += quantity * foodItems.getBuger();
                     break;
                 case 6:
                     System.out.println("The Total Bill is : "+total);
