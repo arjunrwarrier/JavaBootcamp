@@ -175,14 +175,16 @@ public class Restaurant {
                             break;
                         case 6:
                             System.out.println("Enter your name: ");
-                            customerName = scanner.next();
+
+                            customerName = scanner.next();   //taking customer name
+
                             for(int i=0;i<foodItem.size();i++){
-                                System.out.println(foodItem.get(i)+" : "+price.get(i)+"Rs  x "+tquantity.get(i));
+                                System.out.println(foodItem.get(i)+" : "+price.get(i)+"Rs  x "+tquantity.get(i));  //printing get values
                             }
-                            System.out.println("Total Bill : " + total);
-                            invoice = random.nextInt(1000);
+                            System.out.println("Total Bill : " + total);  //total is printed
+                            invoice = random.nextInt(1000);         //generating random number for invoice
                             System.out.println("Bill InvoiceNumber: "+invoice);
-                            foodItem.clear();
+                            foodItem.clear();          //clearing the array
                             price.clear();
                             tquantity.clear();
                             accounts.put("Name",customerName);
@@ -203,6 +205,7 @@ public class Restaurant {
                         }
                         break;
                 case 3:
+                    System.out.println("**************The total transaction is*************");
                     System.out.println(transaction);
                     break;
 
