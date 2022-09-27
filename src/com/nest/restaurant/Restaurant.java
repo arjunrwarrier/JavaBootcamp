@@ -14,11 +14,11 @@ public class Restaurant {
         HashMap<String,String> accounts = new HashMap<>();
         ArrayList<String> transaction =  new ArrayList<>();
 
-        ArrayList<String> foodItem = new ArrayList<>(); //storing fooditems
+        ArrayList<String> foodItem = new ArrayList<>(); //storing food items
 
         ArrayList<Integer> price = new ArrayList<>();      //storing price
 
-        ArrayList<Integer> tquantity = new ArrayList<>();    //storing quantity
+        ArrayList<Integer> totalQuantity = new ArrayList<>();    //storing quantity
 
         Scanner scanner = new Scanner(System.in);
 
@@ -57,7 +57,7 @@ public class Restaurant {
                         case 1:
                             System.out.println("Quantity:  ");
                             quantity = scanner.nextInt();
-                            tquantity.add(quantity);
+                            totalQuantity.add(quantity);
                             price.add(10);
                             foodItem.add("Tea");
                             total += quantity * foodItems.getTea();
@@ -65,7 +65,7 @@ public class Restaurant {
                         case 2:
                             System.out.println("Quantity : ");
                             quantity = scanner.nextInt();
-                            tquantity.add(quantity);
+                            totalQuantity.add(quantity);
                             foodItem.add("Coffee");
                             price.add(15);
                             total += quantity * foodItems.getCoffee();
@@ -73,7 +73,7 @@ public class Restaurant {
                         case 3:
                             System.out.println("Quantity : ");
                             quantity = scanner.nextInt();
-                            tquantity.add(quantity);
+                            totalQuantity.add(quantity);
                             foodItem.add("Lime Juice");
                             price.add(20);
                             total += quantity * foodItems.getLimeJuice();
@@ -81,7 +81,7 @@ public class Restaurant {
                         case 4:
                             System.out.println("Quantity : ");
                             quantity = scanner.nextInt();
-                            tquantity.add(quantity);
+                            totalQuantity.add(quantity);
                             foodItem.add("Sandwich");
                             price.add(50);
                             total += quantity * foodItems.getSandwich();
@@ -89,7 +89,7 @@ public class Restaurant {
                         case 5:
                             System.out.println("Quantity : ");
                             quantity = scanner.nextInt();
-                            tquantity.add(quantity);
+                            totalQuantity.add(quantity);
                             foodItem.add("Burger");
                             price.add(60);
                             total += quantity * foodItems.getBuger();
@@ -98,14 +98,14 @@ public class Restaurant {
                             System.out.println("Enter your name: ");
                             customerName = scanner.next();
                             for(int i=0;i<foodItem.size();i++){
-                                System.out.println(foodItem.get(i)+" : "+price.get(i)+"Rs  x "+tquantity.get(i));
+                                System.out.println(foodItem.get(i)+" : "+price.get(i)+"Rs  x "+totalQuantity.get(i));
                             }
                             System.out.println("Total Bill : " + total);
                             invoice = random.nextInt(1000);
                             System.out.println("Bill InvoiceNumber: "+invoice);
                             foodItem.clear();
                             price.clear();
-                            tquantity.clear();
+                            totalQuantity.clear();
                             accounts.put("Name",customerName);
                             accounts.put("Total", String.valueOf(total));
                             accounts.put("Mode","Take Away");
@@ -136,7 +136,7 @@ public class Restaurant {
                         case 1:
                             System.out.println("Quantity:  ");
                             quantity = scanner.nextInt();
-                            tquantity.add(quantity);
+                            totalQuantity.add(quantity);
                             foodItem.add("Tea");
                             price.add(takeAwayFood.getTea());
                             total += quantity * takeAwayFood.getTea();
@@ -144,7 +144,7 @@ public class Restaurant {
                         case 2:
                             System.out.println("Quantity : ");
                             quantity = scanner.nextInt();
-                            tquantity.add(quantity);
+                            totalQuantity.add(quantity);
                             foodItem.add("Coffee");
                             price.add(takeAwayFood.getCoffee());
                             total += quantity * takeAwayFood.getCoffee();
@@ -152,7 +152,7 @@ public class Restaurant {
                         case 3:
                             System.out.println("Quantity : ");
                             quantity = scanner.nextInt();
-                            tquantity.add(quantity);
+                            totalQuantity.add(quantity);
                             foodItem.add("Lime Juice");
                             price.add(takeAwayFood.getLimeJuice());
                             total += quantity * takeAwayFood.getLimeJuice();
@@ -160,7 +160,7 @@ public class Restaurant {
                         case 4:
                             System.out.println("Quantity : ");
                             quantity = scanner.nextInt();
-                            tquantity.add(quantity);
+                            totalQuantity.add(quantity);
                             foodItem.add("Sandwich");
                             price.add(takeAwayFood.getSandwich());
                             total += quantity * takeAwayFood.getSandwich();
@@ -168,7 +168,7 @@ public class Restaurant {
                         case 5:
                             System.out.println("Quantity : ");
                             quantity = scanner.nextInt();
-                            tquantity.add(quantity);
+                            totalQuantity.add(quantity);
                             foodItem.add("Burger");
                             price.add(takeAwayFood.getBuger());
                             total += quantity * takeAwayFood.getBuger();
@@ -179,14 +179,14 @@ public class Restaurant {
                             customerName = scanner.next();   //taking customer name
 
                             for(int i=0;i<foodItem.size();i++){
-                                System.out.println(foodItem.get(i)+" : "+price.get(i)+"Rs  x "+tquantity.get(i));  //printing get values
+                                System.out.println(foodItem.get(i)+" : "+price.get(i)+"Rs  x "+totalQuantity.get(i));  //printing get values
                             }
                             System.out.println("Total Bill : " + total);  //total is printed
                             invoice = random.nextInt(1000);         //generating random number for invoice
                             System.out.println("Bill InvoiceNumber: "+invoice);
                             foodItem.clear();          //clearing the array
                             price.clear();
-                            tquantity.clear();
+                            totalQuantity.clear();
                             accounts.put("Name",customerName);
                             accounts.put("Total", String.valueOf(total));
                             accounts.put("Mode","Take Away");
