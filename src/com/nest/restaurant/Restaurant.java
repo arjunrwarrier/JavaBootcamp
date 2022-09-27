@@ -7,26 +7,32 @@ public class Restaurant {
     public static void main(String[] args) {
         int total = 0, quantity, choice1, choice2;
 
-        ArrayList<String> foodItem = new ArrayList<>();
+        ArrayList<String> foodItem = new ArrayList<>(); //storing fooditems
 
-        ArrayList<Integer> price = new ArrayList<>();
+        ArrayList<Integer> price = new ArrayList<>();      //storing price
 
-        ArrayList<Integer> tquantity = new ArrayList<>();
+        ArrayList<Integer> tquantity = new ArrayList<>();    //storing quantity
 
         Scanner scanner = new Scanner(System.in);
-        FoodItems foodItems = new FoodItems(10, 15, 20, 50, 60);//
-        FoodItems takeAwayFood = new FoodItems(12, 18, 25, 55, 65);
+
+        FoodItems foodItems = new FoodItems(10, 15, 20, 50, 60);//getting the values
+        FoodItems takeAwayFood = new FoodItems(12, 18, 25, 55, 65);//getting values
 
 
-        System.out.println("Select an option: ");
-        System.out.println("1.Dine Inn            ");
-        System.out.println("2.Take Away           ");
-        System.out.println("3. EXIT               ");
+
+
 
 
         while (true) {
 
+            System.out.println("Select an option: ");
+            System.out.println("1.Dine Inn            ");
+            System.out.println("2.Take Away           ");
+            System.out.println("3. EXIT               ");
             choice1 = scanner.nextInt();
+
+
+
             switch (choice1) {
                 case 1:
                     System.out.println("Select an option Dine INN: ");
