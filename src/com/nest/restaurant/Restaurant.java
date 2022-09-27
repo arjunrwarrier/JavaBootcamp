@@ -22,11 +22,11 @@ public class Restaurant {
         System.out.println("1.Dine Inn            ");
         System.out.println("2.Take Away           ");
         System.out.println("3. EXIT               ");
-        choice1 = scanner.nextInt();
+
 
         while (true) {
 
-
+            choice1 = scanner.nextInt();
             switch (choice1) {
                 case 1:
                     System.out.println("Select an option Dine INN: ");
@@ -92,8 +92,10 @@ public class Restaurant {
                             break;
                         case 7:
                             System.exit(0);
+                            break;
                         default:
                             System.out.println("Enter valid option");
+                            break;
                     }
                     break;
                 case 2:
@@ -167,9 +169,10 @@ public class Restaurant {
                         }
                         break;
                 case 3: System.exit(0);
-                break;
+                        break;
                 default:
                     System.out.println("Enter a valid option");
+                    break;
             }
 
         }
